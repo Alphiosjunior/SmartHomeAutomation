@@ -18,6 +18,24 @@ A budget-friendly IoT smart home prototype designed for **South African househol
 
 ---
 
+## Project Photos
+
+**Physical Prototype**
+
+![Prototype top view](images/prototype-top.png)
+
+![Demo setup with Arduino Cloud dashboard](images/demo-setup.png)
+
+**Google Home Integration**
+
+![Google Home device controls](images/google-home.png)
+
+**Fire Alert Notification**
+
+![Push notification on fire detection](images/fire-notification.png)
+
+---
+
 ## Overview
 
 This project presents a smart home automation system built on the **Arduino Nano RP2040** microcontroller, integrated with **Arduino Cloud IoT** and **Google Home**. It provides remote monitoring and control of key household systems through an affordable, modular IoT solution.
