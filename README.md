@@ -1,10 +1,10 @@
-# 🏠 Smart Home Automation System
+# SmartHomeAutomation
 
-> A budget-friendly IoT smart home prototype designed specifically for **South African households**, addressing load shedding, home security, fire safety, and climate control.
+A budget-friendly IoT smart home prototype designed for **South African households**, addressing load shedding, home security, fire safety, and climate control.
 
 ---
 
-## 👥 Authors
+## Authors
 
 | Name | GitHub |
 |---|---|
@@ -18,27 +18,27 @@
 
 ---
 
-## 📋 Project Overview
+## Overview
 
 This project presents a smart home automation system built on the **Arduino Nano RP2040** microcontroller, integrated with **Arduino Cloud IoT** and **Google Home**. It provides remote monitoring and control of key household systems through an affordable, modular IoT solution.
 
 ### Problems Addressed
 
-- ⚡ **Load shedding** — automatic power switching between municipal and backup sources
-- 🔒 **Home security** — motion-activated alarm with remote arm/disarm
-- 🔥 **Fire safety** — automatic flame detection and water pump suppression
-- 🌡️ **Climate control** — temperature-based fan automation
-- 💡 **Lighting efficiency** — motion-triggered lights to reduce electricity waste
+- **Load shedding** — automatic power switching between municipal and backup sources
+- **Home security** — motion-activated alarm with remote arm/disarm
+- **Fire safety** — automatic flame detection and water pump suppression
+- **Climate control** — temperature-based fan automation
+- **Lighting efficiency** — motion-triggered lights to reduce electricity waste
 
 ---
 
-## 🔧 Hardware Components
+## Hardware Components
 
 | Component | Purpose | Cost (ZAR) |
 |---|---|---|
 | Arduino Nano RP2040 | Main microcontroller | R500 |
 | Arduino Cloud subscription | Remote IoT connectivity | R130 |
-| PIR Motion Sensors (×2) | Bedroom & lounge detection | R100 |
+| PIR Motion Sensors (x2) | Bedroom & lounge detection | R100 |
 | DHT11 Sensor | Temperature & humidity monitoring | R40 |
 | Flame Sensor Module | Fire detection | R20 |
 | 5V Buzzer | Security & fire alarm | R40 |
@@ -49,43 +49,35 @@ This project presents a smart home automation system built on the **Arduino Nano
 
 ---
 
-## ⚙️ System Features
+## System Features
 
-### 1. 💡 Lighting Automation
-- PIR sensors in bedroom and lounge control room LEDs based on occupancy
-- Automatically turns lights on when motion is detected, off when the room is empty
-- Can be overridden manually via Arduino Cloud dashboard
+### Lighting Automation
+PIR sensors in the bedroom and lounge control room LEDs based on occupancy. Lights turn on when motion is detected and off when the room is empty. Manual override is available via the Arduino Cloud dashboard.
 
-### 2. 🌡️ Climate Control
-- DHT11 continuously monitors ambient temperature
-- Fan (DC motor via relay) turns on automatically when temperature exceeds **30°C**
-- Manual override available via cloud dashboard (disables auto mode)
+### Climate Control
+The DHT11 sensor continuously monitors ambient temperature. The fan (DC motor via relay) activates automatically when temperature exceeds 30°C. Manual override via the cloud dashboard disables auto mode.
 
-### 3. 🔒 Security System
-- Armed/disarmed via physical button, cloud dashboard, or Google Home voice command
-- When armed: PIR motion in bedroom or lounge triggers the buzzer and sends a push notification
-- When disarmed: PIR sensors revert to controlling room lighting only
+### Security System
+Armed and disarmed via a physical button, the cloud dashboard, or a Google Home voice command. When armed, motion detected by either PIR sensor triggers the buzzer and sends a push notification to the user.
 
-### 4. 🔥 Fire Detection & Suppression
-- Flame sensor continuously monitors for fire
-- On detection: buzzer sounds + water pump activates + push notification sent to user
-- Water pump turns off automatically once flame is no longer detected
+### Fire Detection and Suppression
+The flame sensor continuously monitors for fire. On detection, the buzzer sounds, the water pump activates, and a push notification is sent. The pump turns off automatically once the flame is no longer detected.
 
-### 5. ⚡ Power Management
-- Relay automatically switches between municipal power and backup/alternative power during outages
+### Power Management
+A relay automatically switches between municipal power and a backup source during outages.
 
 ---
 
-## 📡 Remote Operation
+## Remote Operation
 
 | Platform | Capability |
 |---|---|
-| **Arduino Cloud** | Real-time sensor dashboard, remote light/fan/security control, push notifications |
-| **Google Home** | Voice commands to arm/disarm, toggle lights, control climate |
+| Arduino Cloud | Real-time sensor dashboard, remote light/fan/security control, push notifications |
+| Google Home | Voice commands to arm/disarm, toggle lights, control climate |
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 SmartHomeAutomation/
@@ -93,7 +85,7 @@ SmartHomeAutomation/
 └── README.md                 # Project documentation
 ```
 
-> **Note:** `thingProperties.h` is auto-generated by Arduino Cloud when you set up your Thing. You will need to create a Thing on [Arduino Cloud](https://cloud.arduino.cc) with the following variables:
+> **Note:** `thingProperties.h` is auto-generated by Arduino Cloud when you set up your Thing. Create a Thing on [Arduino Cloud](https://cloud.arduino.cc) with the following variables:
 > - `tempareture` (float, read-only)
 > - `bedroom` (bool, read-write)
 > - `livingroom` (bool, read-write)
@@ -108,7 +100,7 @@ SmartHomeAutomation/
 
 ---
 
-## 🔌 Pin Configuration
+## Pin Configuration
 
 | Pin | Component |
 |---|---|
@@ -125,40 +117,27 @@ SmartHomeAutomation/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-1. **Clone this repository**
+1. Clone this repository
    ```bash
    git clone https://github.com/Alphiosjunior/SmartHomeAutomation.git
    ```
 
-2. **Set up Arduino Cloud**
-   - Create a free account at [cloud.arduino.cc](https://cloud.arduino.cc)
-   - Create a new Thing and add the cloud variables listed above
-   - Download the auto-generated `thingProperties.h` and place it in the same folder as the `.ino` file
+2. Set up Arduino Cloud — create a free account at [cloud.arduino.cc](https://cloud.arduino.cc), create a new Thing, and add the cloud variables listed above. Download the auto-generated `thingProperties.h` and place it in the same folder as the `.ino` file.
 
-3. **Install libraries** (via Arduino IDE Library Manager)
+3. Install the following libraries via the Arduino IDE Library Manager:
    - `DHT sensor library` by Adafruit
    - `ArduinoIoTCloud`
    - `Arduino_ConnectionHandler`
 
-4. **Upload** the sketch to your Arduino Nano RP2040
+4. Upload the sketch to your Arduino Nano RP2040.
 
-5. **Connect Google Home** via the Arduino skill in the Google Home app
-
----
-
-## 📊 Technology Comparison
-
-| Technology | Performance | Affordability | Chosen? |
-|---|---|---|---|
-| Z-Wave | High | Moderate | ❌ |
-| ZigBee | High | Affordable | ❌ |
-| Arduino + Wi-Fi | Good | Very affordable | ✅ |
+5. Connect Google Home via the Arduino skill in the Google Home app.
 
 ---
 
-## 📚 References
+## References
 
 - Kleinman Center for Energy Policy (2023). *Shedding the Load: Power Shortages Widen Divides in South Africa*
 - Africa Sustainability Matters (2023). *Load shedding in South Africa: Unintended consequences*
@@ -167,6 +146,6 @@ SmartHomeAutomation/
 
 ---
 
-## 📄 License
+## License
 
 This project was developed for academic purposes at CPUT. Feel free to use it as a reference for your own IoT projects.
