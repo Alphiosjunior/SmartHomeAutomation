@@ -22,17 +22,17 @@ A budget-friendly IoT smart home prototype designed for **South African househol
 
 **Physical Prototype**
 
-![Prototype top view](images/prototype-top.png)
+<img src="images/prototype-top.png" width="600"/>
 
-![Demo setup with Arduino Cloud dashboard](images/demo-setup.png)
+<img src="images/demo-setup.png" width="600"/>
 
 **Google Home Integration**
 
-![Google Home device controls](images/google-home.png)
+<img src="images/google-home.png" width="300"/>
 
 **Fire Alert Notification**
 
-![Push notification on fire detection](images/fire-notification.png)
+<img src="images/fire-notification.png" width="300"/>
 
 ---
 
